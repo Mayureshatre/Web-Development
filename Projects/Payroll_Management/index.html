@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Payroll Mangement System</h1>
+        <button id="theme-toggle">🌙 Dark Mode</button>
+    </header>
+    <hr>
+    <div class="main-container">
+        <div class="Form-wrapper">
+            <div class="form-wrapper">
+                <h2>Add New Employee</h2>
+                <form id="payroll-form">
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <input type="text" id="emp-name" placeholder="e.g. Rahul Sharma" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Basic Salary (₹)</label>
+                        <input type="number" id="basic-salary" placeholder="e.g. 50000" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Allowances (₹)</label>
+                        <input type="number" id="allowance" placeholder="e.g. 10000">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Deductions (₹)</label>
+                        <input type="number" id="deduction" placeholder="e.g. 2000">
+                    </div>
+
+                    <button type="submit" id="add-btn">Add to List</button>
+                </form>
+            </div>
+        </div>
+        <div class="table-wrapper">
+            <h2>Employee List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Basic</th>
+                        <th>Allowance</th>
+                        <th>Deduction</th>
+                        <th>Net Pay</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="payroll-body">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
