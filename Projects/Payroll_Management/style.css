@@ -1,105 +1,219 @@
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
-
-body { padding: 20px; background-color: #f4f4f9; }
-
-header { 
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    margin-bottom: 15px; 
+/* --- 1. GLOBAL RESET & TYPOGRAPHY --- */
+:root {
+  --primary: #4e54c8; /* Deep Purple Blue */
+  --secondary: #8f94fb; /* Lighter Purple */
+  --accent: #ff6b6b; /* Soft Red for Delete */
+  --bg-color: #f0f2f5; /* Light Grey-Blue Background */
+  --card-bg: #ffffff;
+  --text-color: #333;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft, expensive-looking shadow */
 }
 
-hr {
-    margin-bottom: 15px;
-}
-#theme-toggle {
-    width: auto;     
-    padding: 8px 16px;
-    background-color: #333;
-    border-radius: 20px; 
-    color: white;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 40px;
+  transition: background 0.3s ease;
 }
 
-body.dark-mode .form-wrapper, 
-body.dark-mode .table-wrapper {
-    background-color: #1e1e1e; 
-    color: #ffffff;
-    box-shadow: 0 4px 15px rgba(255,255,255,0.05);
+/* --- 2. HEADER WITH GRADIENT --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 20px 30px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: var(--shadow);
+  margin-bottom: 40px;
 }
 
-body.dark-mode input {
-    background-color: #2d2d2d;
-    border: 1px solid #444;
-    color: white;
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-body.dark-mode #theme-toggle {
-    background-color: #ffffff;
-    color: #333; 
-}
-
-body.dark-mode hr{
-    border-color: #fff;
-}
-
+/* --- 3. LAYOUT & CARDS --- */
 .main-container {
-    display: flex;        
-    gap: 30px;           
-    align-items: flex-start; 
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* The Card Look */
+.form-wrapper,
+.table-wrapper {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 16px; /* Smooth rounded corners */
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .form-wrapper {
-    flex: 1;
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 10px; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  flex: 1;
+}
+.table-wrapper {
+  flex: 2;
+  overflow-x: auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* --- 4. MODERN INPUTS --- */
+.input-group {
+  margin-bottom: 20px;
 }
 
 .input-group label {
-    display: block; 
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 8px;
+  display: block;
+  font-weight: 500;
 }
 
 .input-group input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px; /* Space between inputs */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  font-size: 14px;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
 }
 
-button#add-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff; /* Nice Blue */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
+/* Input Glow on Focus */
+.input-group input:focus {
+  border-color: var(--secondary);
+  background: #fff;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(143, 148, 251, 0.1);
 }
 
-button#add-btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+/* --- 5. MODERN BUTTONS --- */
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
-.table-wrapper {
-    flex: 2;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+#add-btn {
+  background: var(--primary);
+  color: white;
+  width: 100%;
+  font-size: 1rem;
 }
 
-table { width: 100%; border-collapse: collapse; }
-th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+#add-btn:hover {
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 5px 15px rgba(78, 84, 200, 0.3);
+}
+
+#theme-toggle {
+  background: rgba(255, 255, 255, 0.2); /* Glass effect */
+  color: white;
+  backdrop-filter: blur(5px);
+}
+
+#theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Delete Button Styles */
+.delete-btn {
+  background: #fff0f0;
+  color: var(--accent);
+  padding: 8px 12px;
+  font-size: 0.8rem;
+}
+
+.delete-btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* --- 6. TABLE POLISH --- */
+table {
+  width: 100%;
+  border-collapse: separate; /* Allows rounded corners on rows */
+  border-spacing: 0 10px; /* Adds space between rows */
+}
+
+th {
+  text-align: left;
+  color: #888;
+  font-size: 0.85rem;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Making rows look like mini-cards */
+tbody tr {
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s;
+}
+
+tbody tr:hover {
+  transform: scale(1.01);
+}
+
+td {
+  padding: 15px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+td:first-child {
+  border-left: 1px solid #eee;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-weight: 600;
+}
+td:last-child {
+  border-right: 1px solid #eee;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* --- 7. DARK MODE OVERRIDES --- */
+body.dark-mode {
+  --bg-color: #1a1a1a;
+  --card-bg: #2d2d2d;
+  --text-color: #f0f0f0;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .input-group input {
+  background: #3d3d3d;
+  border-color: #444;
+  color: white;
+}
+
+body.dark-mode tbody tr {
+  background: #333;
+}
+body.dark-mode td {
+  border-color: #444;
+}
