@@ -62,5 +62,29 @@ $(document).ready(function () {
       `;
       $("#payroll-body").append(row);
     });
+    updateSummary();
   }
+
+  function updateSummary() {
+    let totalEmp = employees.length;
+    let totalSalary = 0;
+
+    employees.forEach((emp) => {
+      totalSalary += emp.netPay;
+    });
+
+    let avgSalary = totalEmp > 0 ? (totalSalary / totalEmp).toFixed(2) : 0;
+
+    $("#total-employees").text(totalEmp);
+    $("#total-payout").text("₹" + totalSalary);
+    $("#avg-pay").text("₹" + avgSalary);
+  }
+
+  $("#search-input").on("keyup", function () {
+    let value = $(this).val().toLowerCase();
+
+    $("#payroll-body tr").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+  });
 });

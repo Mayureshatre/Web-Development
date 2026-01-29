@@ -46,22 +46,54 @@
             </div>
         </div>
         <div class="table-wrapper">
-            <h2>Employee List</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Basic</th>
-                        <th>Allowance</th>
-                        <th>Deduction</th>
-                        <th>Net Pay</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody id="payroll-body">
 
-                </tbody>
-            </table>
+            <div class="summary-cards">
+                <div class="card-single">
+                    <div>
+                        <h3 id="total-employees">0</h3>
+                        <span>Total Employees</span>
+                    </div>
+                    <div class="card-icon">👥</div>
+                </div>
+
+                <div class="card-single">
+                    <div>
+                        <h3 id="total-payout">₹0</h3>
+                        <span>Total Monthly Payout</span>
+                    </div>
+                    <div class="card-icon">💰</div>
+                </div>
+
+                <div class="card-single">
+                    <div>
+                        <h3 id="avg-pay">₹0</h3>
+                        <span>Average Pay</span>
+                    </div>
+                    <div class="card-icon">📊</div>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="🔍 Search employee by name...">
+            </div>
+
+            <table>
+                ...
+                <h2>Employee List</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Basic</th>
+                            <th>Allowance</th>
+                            <th>Deduction</th>
+                            <th>Net Pay</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="payroll-body">
+
+                    </tbody>
+                </table>
         </div>
     </div>
     <script src="script.js"></script>
