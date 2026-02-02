@@ -12,6 +12,7 @@ This repository is organized into projects and experiments. The main projects ar
 | Project Name                                               | Description                                                                                                   | Tech Stack              | Status       |
 | :--------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------ | :---------------------- | :----------- |
 | **[Payroll Management System](./projects/payroll-system)** | A dashboard to manage employee salaries with real-time calculation, dark mode, and local storage persistence. | `jQuery` `CSS3` `HTML5` | ✅ Completed |
+| **[Grand Horizon Hotel](./projects/Hotel_Website)**        | A luxury hotel landing page featuring a visual gallery, Indian menu, and smart image fallbacks.               | `HTML5` `CSS3` `JS`     | ✅ Completed |
 
 _(Click on the project name to view its source code and documentation)_
 
@@ -29,10 +30,10 @@ Here are the technologies I have worked with in this repository:
 
 ## 📝 Learning Highlights
 
-- **DOM Manipulation:** extensive practice with both Vanilla JS and jQuery.
-- **State Management:** Using `localStorage` to persist data without a backend.
-- **Responsive Design:** Creating layouts that work on mobile and desktop using Flexbox and Grid.
-- **UI/UX:** Implementing Dark Mode and interactive dashboards.
+- **Responsive Design:** Using CSS Grid and Flexbox for gallery and menu layouts.
+- **DOM Manipulation:** Handling real-time image errors using JavaScript event listeners.
+- **State Management:** Using `localStorage` (in Payroll App) to persist data without a backend.
+- **UI/UX:** Designing custom scrollbars and implementing smooth scrolling navigation.
 
 ## 📫 Connect with Me
 
